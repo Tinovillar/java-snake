@@ -23,7 +23,7 @@ public class SnakeBodyPart extends Entity{
         int[] nextMove = nextMove(direction);
         Entity nextEntity = this.board.getEntity(this.row + nextMove[0], this.column + nextMove[1]);
         if(nextEntity.canRecibeMe(this)) {
-            this.board.fillWithAir(this);
+            this.board.remove(this);
             if(nextEntity.canEatMe(this)) {
                 nextEntity.destroy();
             }

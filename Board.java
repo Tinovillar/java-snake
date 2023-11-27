@@ -26,15 +26,11 @@ public class Board {
     }
 
     public void remove(Entity entity) {
-        this.board[entity.getRow()][entity.getColumn()] = null;
+        this.board[entity.getRow()][entity.getColumn()] = new AirEntity(entity.getRow(),entity.getColumn(),this);
     }
 
     public void update(Entity entity) {
         this.board[entity.getRow()][entity.getColumn()] = entity;
-    }
-
-    public void fillWithAir(Entity entity) {
-        this.board[entity.getRow()][entity.getColumn()] = new AirEntity(entity.getRow(),entity.getColumn(),this);
     }
 
     public void updateDirection(Direction direction) {
