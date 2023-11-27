@@ -5,7 +5,7 @@ public class Board {
 
     public Board(Game game) {
         this.game = game;
-        this.board = new Entity[20][20];
+        this.board = new Entity[Utils.boardDimension][Utils.boardDimension];
         this.snake = new Snake(this);
         initializeBoard();
     }
@@ -15,8 +15,8 @@ public class Board {
     }
 
     public void addFood() {
-        int randomRow = (int) (Math.random() * 20);
-        int randomColumn = (int) (Math.random() * 20);
+        int randomRow = (int) (Math.random() * Utils.boardDimension);
+        int randomColumn = (int) (Math.random() * Utils.boardDimension);
         new Food(randomRow, randomColumn, this);
     }
 
@@ -50,8 +50,8 @@ public class Board {
     }
 
     public void initializeBoard() {
-        for (int i = 0; i < 20; i++) {
-            for (int j = 0; j < 20; j++) {
+        for (int i = 0; i < Utils.boardDimension; i++) {
+            for (int j = 0; j < Utils.boardDimension; j++) {
                 if(this.board[i][j] == null)
                     this.board[i][j] = new AirEntity(i,j,this);
             }

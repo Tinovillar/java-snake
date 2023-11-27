@@ -38,7 +38,7 @@ public class SnakeBodyPart extends Entity{
     public boolean inRange(int row, int column) {
         int possibleRow = this.row + row;
         int possibleColumn = this.column + column;
-        return possibleRow >= 0 && possibleRow < 20 && possibleColumn >= 0 && possibleColumn < 20;
+        return possibleRow >= 0 && possibleRow < Utils.boardDimension && possibleColumn >= 0 && possibleColumn < Utils.boardDimension;
     }
 
     public int[] nextMove(Direction direction) {

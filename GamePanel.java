@@ -8,7 +8,7 @@ public class GamePanel extends JPanel {
     public GamePanel(Game game) {
         this.game = game;
         setLayout(null);
-        setPreferredSize(new Dimension(30*20,30*20));
+        setPreferredSize(new Dimension(Utils.entitySize*Utils.boardDimension,Utils.entitySize*Utils.boardDimension));
         setOpaque(true);
         setFocusable(true);
         setBackground(Color.BLACK);

@@ -8,7 +8,7 @@ public class GraphicEntity extends JLabel {
         this.gamePanel = gamePanel;
         this.logicalEntity = logicalEntity;
         this.logicalEntity.setGraphicEntity(this);
-        setBounds(logicalEntity.getColumn()*30, logicalEntity.getRow()*30,30,30);
+        setBounds(logicalEntity.getColumn()*Utils.entitySize, logicalEntity.getRow()*Utils.entitySize,Utils.entitySize,Utils.entitySize);
         setBackground(logicalEntity.getColor());
         setOpaque(true);
         setVisible(true);
@@ -17,7 +17,7 @@ public class GraphicEntity extends JLabel {
     }
 
     public void updateLocation() {
-        setLocation(logicalEntity.getColumn()*30, logicalEntity.getRow()*30);
+        setLocation(logicalEntity.getColumn()*Utils.entitySize, logicalEntity.getRow()*Utils.entitySize);
         gamePanel.repaint();
     }
 
