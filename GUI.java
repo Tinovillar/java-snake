@@ -1,8 +1,3 @@
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-
 public class GUI{
     private final GameFrame gameFrame;
     private final GamePanel gamePanel;
@@ -13,8 +8,12 @@ public class GUI{
         this.gameFrame = new GameFrame(this.gamePanel);
     }
 
-    public void asociateGraphicEntity(SnakeBodyPart snakeBodyPart) {
-        GraphicEntity graphicEntity = new GraphicEntity(snakeBodyPart);
-        gamePanel.add(graphicEntity);
+    public void asociateGraphicEntity(Entity entity) {
+        if(entity.getColor() != null)
+            new GraphicEntity(entity, gamePanel);
+    }
+
+    public void loseGame() {
+        System.exit(0);
     }
 }

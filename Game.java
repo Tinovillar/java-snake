@@ -10,6 +10,10 @@ public class Game {
         myBoard.updateDirection(direction);
     }
 
+    public void addFood() {
+        this.myBoard.addFood();
+    }
+
     public void move() {
         myBoard.move();
     }
@@ -18,8 +22,12 @@ public class Game {
         myBoard.createBodyPart();
     }
 
-    public void sendToGUI(SnakeBodyPart snakeBodyPart) {
-        myGUI.asociateGraphicEntity(snakeBodyPart);
+    public void sendToGUI(Entity entity) {
+        myGUI.asociateGraphicEntity(entity);
+    }
+
+    public void loseGame() {
+        myGUI.loseGame();
     }
 
     public static void main(String[] args) {

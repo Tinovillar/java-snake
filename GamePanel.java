@@ -8,9 +8,10 @@ public class GamePanel extends JPanel {
     public GamePanel(Game game) {
         this.game = game;
         setLayout(null);
-        setPreferredSize(new Dimension(25*20,25*20));
-        setBackground(Color.BLACK);
+        setPreferredSize(new Dimension(30*20,30*20));
+        setOpaque(true);
         setFocusable(true);
+        setBackground(Color.BLACK);
         addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
                 switch (e.getKeyCode()) {
@@ -31,7 +32,7 @@ public class GamePanel extends JPanel {
                         game.move();
                     }
                     case KeyEvent.VK_SPACE -> {
-                        game.move();
+                        game.addFood();
                     }
                     case KeyEvent.VK_ENTER -> {
                         game.createBodyPart();
