@@ -27,6 +27,9 @@ public class GamePanel extends JPanel {
                     case KeyEvent.VK_DOWN -> {
                         game.notifyMove(Direction.DOWN);
                     }
+                    case KeyEvent.VK_P -> {
+                        game.pauseGame();
+                    }
                 }
             }
         });
