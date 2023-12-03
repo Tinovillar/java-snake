@@ -8,7 +8,7 @@ public class GameLoop extends Thread{
     @Override
     public void run() {
         try {
-            while (!this.game.isPaused()) {
+            while (!this.game.isLosed()) {
                 this.game.move();
                 sleep(150);
             }

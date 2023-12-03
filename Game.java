@@ -2,9 +2,9 @@ public class Game {
     private GUI myGUI;
     private Board myBoard;
     private GameLoop gameLoop;
-    private boolean paused;
+    private boolean losed;
     public Game() {
-        this.paused = false;
+        this.losed = false;
         this.myGUI = new GUI(this);
         this.myBoard = new Board(this);
         this.gameLoop = new GameLoop(this);
@@ -32,14 +32,11 @@ public class Game {
     }
 
     public void loseGame() {
+        this.losed = true;
         myGUI.loseGame();
     }
-    public boolean isPaused() {
-        return this.paused;
-    }
-
-    public void pauseGame() {
-        this.paused = !this.paused;
+    public boolean isLosed() {
+        return this.losed;
     }
 
     public static void main(String[] args) {
