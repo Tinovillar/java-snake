@@ -1,9 +1,14 @@
 public class Game {
     private GUI myGUI;
     private Board myBoard;
+    private GameLoop gameLoop;
+    private boolean paused;
     public Game() {
+        this.paused = false;
         this.myGUI = new GUI(this);
         this.myBoard = new Board(this);
+        this.gameLoop = new GameLoop(this);
+        this.gameLoop.start();
     }
 
     public void notifyMove(Direction direction) {
@@ -28,6 +33,9 @@ public class Game {
 
     public void loseGame() {
         myGUI.loseGame();
+    }
+    public boolean isPaused() {
+        return this.paused;
     }
 
     public static void main(String[] args) {
