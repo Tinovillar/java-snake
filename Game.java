@@ -38,6 +38,10 @@ public class Game {
         return this.paused;
     }
 
+    public void pauseGame() {
+        this.paused = !this.paused;
+    }
+
     public static void main(String[] args) {
         new Game();
     }
