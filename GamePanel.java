@@ -17,25 +17,15 @@ public class GamePanel extends JPanel {
                 switch (e.getKeyCode()) {
                     case KeyEvent.VK_LEFT -> {
                         game.notifyMove(Direction.LEFT);
-                        game.move();
                     }
                     case KeyEvent.VK_RIGHT -> {
                         game.notifyMove(Direction.RIGHT);
-                        game.move();
                     }
                     case KeyEvent.VK_UP -> {
                         game.notifyMove(Direction.UP);
-                        game.move();
                     }
                     case KeyEvent.VK_DOWN -> {
                         game.notifyMove(Direction.DOWN);
-                        game.move();
-                    }
-                    case KeyEvent.VK_SPACE -> {
-                        game.addFood();
-                    }
-                    case KeyEvent.VK_ENTER -> {
-                        game.createBodyPart();
                     }
                 }
             }
