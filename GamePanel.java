@@ -27,13 +27,20 @@ public class GamePanel extends JPanel {
                     case KeyEvent.VK_DOWN -> {
                         game.notifyMove(Direction.DOWN);
                     }
-                    case KeyEvent.VK_P -> {
-                        game.pauseGame();
-                    }
                 }
             }
         });
         setVisible(true);
         requestFocusInWindow();
+    }
+
+    public void paint(Graphics graphics) {
+        super.paint(graphics);
+        for (int i = 0; i < Utils.boardDimension; i++) {
+            for (int j = 0; j < Utils.boardDimension; j++) {
+                graphics.drawRect(i*Utils.entitySize, j*Utils.entitySize, getWidth(), getHeight());
+            }
+
+        }
     }
 }
