@@ -15,9 +15,14 @@ public class Board {
     }
 
     public void addFood() {
-        int randomRow = (int) (Math.random() * Utils.boardDimension);
-        int randomColumn = (int) (Math.random() * Utils.boardDimension);
-        new Food(randomRow, randomColumn, this);
+        Food food = null;
+        int randomRow, randomColumn;
+        do {
+            randomRow = (int) (Math.random() * Utils.boardDimension);
+            randomColumn = (int) (Math.random() * Utils.boardDimension);
+            food = new Food(randomRow, randomColumn, this);
+        } while(!food.canRecibeMe(board[randomRow][randomColumn]));
+        add(food);
     }
 
     public void add(Entity entity) {

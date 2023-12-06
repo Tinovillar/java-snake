@@ -4,7 +4,7 @@ public class Food extends Entity{
     public Food(int row, int column, Board board) {
         super(row, column, board);
         this.color = Color.RED;
-        this.board.add(this);
+        //this.board.add(this);
     }
 
     @Override
@@ -14,17 +14,17 @@ public class Food extends Entity{
 
     @Override
     public boolean canRecibe(Food food) {
-        return false;
-    }
-
-    @Override
-    public boolean canRecibe(SnakeBodyPart snakeBodyPart) {
         return true;
     }
 
     @Override
-    public boolean canRecibe(AirEntity airEntity) {
+    public boolean canRecibe(SnakeBodyPart snakeBodyPart) {
         return false;
+    }
+
+    @Override
+    public boolean canRecibe(AirEntity airEntity) {
+        return true;
     }
 
     @Override
